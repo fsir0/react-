@@ -1,0 +1,27 @@
+.pagination-wrapper {
+    font-size: 14px;
+    font-weight: normal;
+}
+.pagination-wrapper .item {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    user-select: none;
+}
+.pagination-wrapper .item.disabled {
+    border-color: #efefef;
+    color: #ddd;
+    cursor: not-allowed;
+}
+.pagination-wrapper .item.active {
+    color: #f40;
+    cursor: default;
+}
+.pagination-wrapper .item + .item {
+    margin-left: 5px;
+}
+.pagination-wrapper .current {
+    margin-left: 10px;
+}
