@@ -54,3 +54,33 @@
     2. 第三个参数为前一个生命周期的返回值
 6. componentWillUnmount
     1. 与之前相同
+## 属性汇合
+1. defaultProps生命周期开始前将汇合至props中
+## 属性类型验证
+```js
+// 需要先引入PropTypes(import PropTypes from 'react-types')，再调用静态属性 static propTypes
+PropTypes.any // 任意类型的数据
+PropTypes.string // 字符串类型
+PropTypes.number // 数字类型
+PropTypes.boolean // 布尔类型
+PropTypes.symbol // symbol类型
+PropTypes.func // 函数类型
+PropTypes.array // 数组类型
+PropTypes.object // 对象类型
+
+PropTypes.node // 节点类型（包含文字节点）
+PropTypes.element // react元素节点类型
+PropTypes.elementType // react的元素类型（构造器）
+PropTypes.instanceOf(构造函数) // 属性为构造器的实例
+PropTypes.oneOf([xxx, xxx]) // 属性为当前枚举值中的一个
+PropTypes.oneOfType([xxx, xxx]) // 传入的类型为当前枚举值中的一个
+PropTypes.arrayOf(PropTypes.xxx) // 当前数组的每一位元素类型为xxx
+PropTypes.objectOf(PropTypes.xxx) // 当前对象的每一个属性型为xxx
+PropTypes.shape({xx: PropTypes.xxx}) // 当前对象的xx属性类型为xxx，可以传多的属性
+PropTypes.exact({xx: PropTypes.xxx}) // 精确定义对象类型，不能传多的属性
+// 自定义类型检测
+function (props, propsName, componentName) {
+    // 判断props[propsName]
+    return new Error('错误信息')
+}
+```

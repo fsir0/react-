@@ -3,16 +3,19 @@ import './index.css'
 
 export default class Modal extends Component {
     render() {
-        const datas = Object.assign({
+        const data = Object.assign({
             bg: 'rgba(0, 0, 0, .4)'
         }, this.props)
         return (
             <div className="modal-wrapper" style={{
-                backgroundColor: datas.bg
+                backgroundColor: data.bg
             }}>
                 <div className="modal-content">
-                    <i className="modal-close"></i>
-                    {datas.children}
+                    <i
+                        className="modal-close"
+                        onClick={data.handleCLose}
+                    ></i>
+                    {data.children}
                 </div>
             </div>
         )
