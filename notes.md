@@ -84,3 +84,19 @@ function (props, propsName, componentName) {
     return new Error('错误信息')
 }
 ```
+## HOC高阶组件
+使用举例：给50个组件记录创建和销毁的日志 || 50个组件需要展示一些内容，得到的数据结构完全一致
+1. 命名以小驼峰方式命名 例如：whiteLog.js
+### 需要注意：
+1. 不要在render中使用高阶组件
+2. 不要在高阶组件内部修改传入的组件
+
+## ref
+### 字符串方式（将来可能被移除）
+1. ref作用于内置html组件则得到的是dom对象
+2. ref作用于自定义rect类组件则得到的是类的实例
+3. ref不能作用于函数组件
+### 为ref赋值 对象的方式
+对象采用React.createRef()方式创建，创建的结果与{current: null}
+### 为ref赋值 函数方式
+第一个参数为当前的dom对象或则类实例
